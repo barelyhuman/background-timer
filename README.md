@@ -2,6 +2,12 @@
 
 Simple react hook to run a timer in the background
 
+## Install
+
+```sh
+npm i @barelyreaper/background-timer
+```
+
 ## Usage
 
 ```js
