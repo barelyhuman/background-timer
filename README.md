@@ -2,6 +2,9 @@
 
 Simple react hook to run a timer in the background
 
+## Motivation
+Nothing really, pulled it off a project I wrote it for and now it's a package.
+
 ## Install
 
 ```sh
