@@ -23,7 +23,11 @@ export default function App() {
    */
 
   const { timer, reset } = useBackgroundTimer(2 * 1000 * 60);
+  
 
-  return <>{msTimestamp(timer)}</>;
+  return <>
+    <p>{msTimestamp(timer)}</p>
+    <button disabled={timer>0} onClick={()=>reset()}>Reset Timer</button>
+  </>;
 }
 ```
