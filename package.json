@@ -6,6 +6,11 @@
   "files": [
     "dist/**"
   ],
+  "homepage": "https://github.com/barelyhuman/background-timer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barelyhuman/background-timer"
+  },
   "private": false,
   "scripts": {
     "watch": "tsc --watch",
