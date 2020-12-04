@@ -22,6 +22,7 @@ export const useBackgroundTimer = (
       const now = new Date().getTime();
       const diff = endTime - now;
       if (diff <= 0) {
+        setTimer(0);
         options.onTimerEnd && options.onTimerEnd();
         clearInterval(timerRef.current);
       }
