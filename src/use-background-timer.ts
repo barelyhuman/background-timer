@@ -22,11 +22,12 @@ export const useBackgroundTimer = (
       const now = new Date().getTime();
       const diff = endTime - now;
       if (diff <= 0) {
-        setTimer(0);
         options.onTimerEnd && options.onTimerEnd();
         clearInterval(timerRef.current);
+        setTimer(0);
+      } else {
+        setTimer(diff);
       }
-      setTimer(diff);
     }
     if (timer > 0) {
       timerRef.current = setInterval(tick, 1000);

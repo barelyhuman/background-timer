@@ -5,7 +5,11 @@ import {
 import './App.css';
 
 function App() {
-  const { timer, reset } = useBackgroundTimer(2 * 1000 * 60);
+  const { timer, reset } = useBackgroundTimer(2 * 1000 , {
+    onTimerEnd: () => {
+      alert('Timer Ended');
+    },
+  });
 
   console.log(timer);
 
