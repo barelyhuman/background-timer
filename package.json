@@ -11,6 +11,9 @@
     "type": "git",
     "url": "https://github.com/barelyhuman/background-timer"
   },
+  "bugs": {
+    "url": "https://github.com/barelyhuman/background-timer/issues"
+  },
   "private": false,
   "scripts": {
     "watch": "tsc --watch",
@@ -30,5 +33,12 @@
   },
   "description": "Simple react hook to run a timer in the background",
   "dependencies": {},
-  "author": ""
+  "author": "Reaper",
+  "keywords": [
+    "background-timer",
+    "timer",
+    "otp",
+    "react-native",
+    "react"
+  ]
 }
