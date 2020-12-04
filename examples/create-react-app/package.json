@@ -34,8 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "peerDependencies": {
-    "@barelyreaper/background-timer": "^0.0.7"
   }
 }
