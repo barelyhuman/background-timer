@@ -11,8 +11,6 @@ function App() {
     },
   });
 
-  console.log(timer);
-
   return (
     <div className="App">
       <p>{msTimestamp(timer)}</p>
