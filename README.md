@@ -22,7 +22,11 @@ export default function App() {
    * @returns {timer: milliseconds, reset: function} resets the timer
    */
 
-  const { timer, reset } = useBackgroundTimer(2 * 1000 * 60);
+  const { timer, reset } = useBackgroundTimer(2 * 1000 * 60,{
+    onTimerEnd:()=>{
+      alert("Timer Ended");
+    }
+  });
   
 
   return <>
