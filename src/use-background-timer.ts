@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
-export const useBackgroundTimer = (timeInMilliseconds: number) => {
+export const useBackgroundTimer = (
+  timeInMilliseconds: number,
+  options: {
+    onTimerEnd: () => void;
+  }
+) => {
   const [timer, setTimer] = useState<number | undefined>();
   const [endTime, setEndTime] = useState<number | undefined>();
   const timerRef = useRef<any>();
@@ -17,6 +22,7 @@ export const useBackgroundTimer = (timeInMilliseconds: number) => {
       const now = new Date().getTime();
       const diff = endTime - now;
       if (diff <= 0) {
+        options.onTimerEnd && options.onTimerEnd();
         clearInterval(timerRef.current);
       }
       setTimer(diff);
@@ -38,5 +44,5 @@ export const useBackgroundTimer = (timeInMilliseconds: number) => {
     return new Date().setTime(new Date().getTime() + timeInMilliseconds);
   }
 
-  return { timeRemaining: timer, reset };
+  return { timer, reset };
 };
