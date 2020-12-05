@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 export const useBackgroundTimer = (
   timeInMilliseconds: number,
   options: {
-    onTimerEnd: () => void;
-  }
+    onTimerEnd?: () => void;
+  } = {}
 ) => {
   const [timer, setTimer] = useState<number | undefined>();
   const [endTime, setEndTime] = useState<number | undefined>();
@@ -22,8 +22,8 @@ export const useBackgroundTimer = (
       const now = new Date().getTime();
       const diff = endTime - now;
       if (diff <= 0) {
-        options.onTimerEnd && options.onTimerEnd();
         clearInterval(timerRef.current);
+        options?.onTimerEnd && options.onTimerEnd();
         setTimer(0);
       } else {
         setTimer(diff);
