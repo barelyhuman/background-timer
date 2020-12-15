@@ -23,7 +23,9 @@ export const useBackgroundTimer = (
       const diff = endTime - now;
       if (diff <= 0) {
         clearInterval(timerRef.current);
-        options?.onTimerEnd && options.onTimerEnd();
+        if (options.onTimerEnd) {
+          options.onTimerEnd();
+        }
         setTimer(0);
       } else {
         setTimer(diff);
