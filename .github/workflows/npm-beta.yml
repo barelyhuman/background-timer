@@ -1,8 +1,8 @@
-name: NPM Publish
+name: NPM Publish Beta
 
 on:
   push:
-    tags-ignore:
+    tags:
       - '*-dev.*'
 
 jobs:
@@ -16,6 +16,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn install
       - run: yarn build 
-      - run: npm publish --access public
+      - run: npm publish --access public --tag beta
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
